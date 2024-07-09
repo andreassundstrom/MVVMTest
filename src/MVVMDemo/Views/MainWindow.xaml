@@ -8,11 +8,19 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid>
-            <StackPanel VerticalAlignment="Top" Orientation="Horizontal">
-                <TextBox Name="FilterTextBox" TextChanged="FilterTextBox_TextChanged" Width="200" Height="25" />
-                <Button Width="100" Command="{Binding ShowWindowCommand}">Add User</Button>
-            </StackPanel>
-            <ListView Name="UserList" Height="350" VerticalAlignment="Bottom" ItemsSource="{Binding Users}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                    <TextBox HorizontalAlignment="Left" Grid.Column="0" Name="FilterTextBox" TextChanged="FilterTextBox_TextChanged" Width="200"/>
+                    <Button HorizontalAlignment="Right" Grid.Column="1" Width="100" Command="{Binding ShowWindowCommand}">Add User</Button>
+            </Grid>
+            <ListView Name="UserList" ItemsSource="{Binding Users}" Grid.Row="1" Margin="8">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>

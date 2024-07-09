@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 using MVVMDemo.Commands;
 using MVVMDemo.Models;
@@ -25,7 +26,8 @@ namespace MVVMDemo.ViewModels
         private void ShowWindow(object obj)
         {
             AddUserWindow addUserWindow = new AddUserWindow();
-            addUserWindow.Show();
+            addUserWindow.Owner = Application.Current.MainWindow;
+            addUserWindow.ShowDialog();
         }
     }
 }

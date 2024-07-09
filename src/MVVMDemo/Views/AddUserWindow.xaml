@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:MVVMDemo.Views"
         mc:Ignorable="d"
         SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
         Title="AddUserWindow" >
     <Window.Resources>
